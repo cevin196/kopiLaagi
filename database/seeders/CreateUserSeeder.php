@@ -26,6 +26,8 @@ class CreateUserSeeder extends Seeder
                 'email' => 'user@mail.com',
                 'is_admin' => 0,
                 'password' => bcrypt('password'),
+                'alamat' => "Yogyakarta, Kampus 1 UTY",
+                'telepon' => "0811223344",
             ]
         ];
 

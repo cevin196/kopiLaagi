@@ -28,7 +28,10 @@ class UserController extends Controller
 
     public function shop()
     {
-        return view('user.shop');
+        $makanans = Menu::where('jenis', 'Makanan')->get();
+        $minumans = Menu::where('jenis', 'Minuman')->get();
+        $desserts = Menu::where('jenis', 'Dessert')->get();
+        return view('user.shop', compact('makanans', 'minumans', 'desserts'));
     }
 
     public function contact()

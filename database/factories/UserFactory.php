@@ -22,6 +22,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'alamat' => $this->faker->address(),
             'telepon' => $this->faker->e164PhoneNumber(),
+            'is_admin' => 0,
         ];
     }
 

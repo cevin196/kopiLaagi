@@ -99,7 +99,7 @@
                     <h2 class="mb-4">Our Menu</h2>
                     <p class="mb-4">Coffe Laagi menyediakan berbagai menu makanan dan minuman yang nikmat dan ramah
                         di kantong, ikuti juga berbagai promo menarik dari kami.</p>
-                    <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Menu</a></p>
+                    <p><a href="{{route('user.menu')}}" class="btn btn-primary btn-outline-primary px-4 py-3">Menu</a></p>
                 </div>
             </div>
             <div class="col-md-6">

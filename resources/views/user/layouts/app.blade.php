@@ -12,7 +12,7 @@
     {{-- header --}}
     @include('user.layouts.header')
     {{-- end header --}}
-
+    
 	@section('content')
 		
 	@show

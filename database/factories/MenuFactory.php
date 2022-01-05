@@ -20,8 +20,7 @@ class MenuFactory extends Factory
         $jenis = array(
             'Minuman',
             'Makanan',
-            'Makanan Penutup',
-            'Kopi'
+            'Dessert',
         );
         $key = array_rand($jenis);
 
@@ -31,7 +30,7 @@ class MenuFactory extends Factory
             'deskripsi' => $this->faker->text($maxNbChars = 100),
             'harga' => $this->faker->numberBetween($min = 15000, $max = 100000),
             'jenis' => $jenis[$key],
-            'gambar' => $this->faker->text($maxNbChars = 200)
+            'gambar' => "menu-default.png"
         ];
     }
 }

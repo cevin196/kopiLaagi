@@ -6,10 +6,13 @@
             <span class="oi oi-menu"></span> Menu
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">               
-                <li class="nav-item {{(Route::currentRouteName()=='user.index')?'active':''}}"><a href="{{route('user.index')}}" class="nav-link">Home</a></li>
-                <li class="nav-item {{(Route::currentRouteName()=='user.menu')?'active':''}}"><a href="{{route('user.menu')}}" class="nav-link">Menu</a></li>
-                <li class="nav-item {{(Route::currentRouteName()=='user.index')?'about':''}}"><a href="{{route('user.about')}}" class="nav-link">About</a></li>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item {{(Route::currentRouteName()=='user.index')?'active':''}}"><a
+                        href="{{route('user.index')}}" class="nav-link">Home</a></li>
+                <li class="nav-item {{(Route::currentRouteName()=='user.menu')?'active':''}}"><a
+                        href="{{route('user.menu')}}" class="nav-link">Menu</a></li>
+                <li class="nav-item {{(Route::currentRouteName()=='user.index')?'about':''}}"><a
+                        href="{{route('user.about')}}" class="nav-link">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Shop</a>
@@ -19,12 +22,26 @@
                         <a class="dropdown-item" href="checkout.html">Checkout</a>
                     </div>
                 </li>
-                <li class="nav-item {{(Route::currentRouteName()=='user.contact')?'active':''}}"><a href="{{route('user.contact')}}" class="nav-link">Contact</a></li>
+                <li class="nav-item {{(Route::currentRouteName()=='user.contact')?'active':''}}"><a
+                        href="{{route('user.contact')}}" class="nav-link">Contact</a></li>
                 <li class="nav-item cart"><a href="{{route('user.shop')}}" class="nav-link"><span
-                            class="icon icon-shopping_cart"></span><span
-                            class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a>
-                </li>
+                            class="icon icon-shopping_cart"></span></a>
+                </li>            
             </ul>
+            @auth
+            <a
+                href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();" class="nav-link bg-warning text-white">Logout</a> 
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+            @endauth
+            @guest
+            <a href="{{ route('login') }}" class="nav-link bg-warning text-white ">Login</a> 
+
+            @endguest
+            
         </div>
     </div>
 </nav>
